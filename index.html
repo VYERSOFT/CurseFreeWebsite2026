@@ -289,9 +289,14 @@
             align-items: start;
         }
 
-        .discord-widget iframe {
+        .discord-widgets {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .discord-widgets iframe {
             width: 100%;
-            height: 340px;
             border: none;
             border-radius: 12px;
         }
@@ -518,8 +523,9 @@
         <div class="section-title">Join the Crew</div>
         <div class="section-divider"></div>
         <div class="community-grid">
-            <div class="discord-widget">
+            <div class="discord-widgets">
                 <iframe src="https://invidget.switchblade.xyz/damn?theme=dark" title="DAMN! Discord Server"></iframe>
+                <iframe src="https://invidget.switchblade.xyz/RHbqyR77gs?theme=dark" title="Curse Free Studios Discord Server"></iframe>
             </div>
             <div>
                 <div class="community-group-label">DAMN!</div>
