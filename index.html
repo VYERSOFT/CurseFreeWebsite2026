@@ -3,39 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carpet Cleaning Simulator | Curse Free Studios</title>
-    <meta name="description" content="Relax. Clean. Satisfy your brain. Carpet Cleaning Simulator is live on Roblox. Scrub, spray, and restore dirty carpets to perfection.">
+    <title>Curse Free Studios | We Said No Curses. Then We Made DAMN!</title>
+    <meta name="description" content="Curse Free Studios. We swore we wouldn't curse. Then we made DAMN! Nation, DARN!, and a bunch of Roblox games. Whoops. Independent game studio making games for mobile and Roblox.">
     <link rel="canonical" href="https://cursefreestudios.com/">
     <link rel="icon" type="image/png" sizes="32x32" href="./uploads/CFS-LOGO-TRANSPARENT-BACKGROUND___Complete-DARKRED.png">
 
+    <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://cursefreestudios.com/">
-    <meta property="og:title" content="Carpet Cleaning Simulator | Curse Free Studios">
-    <meta property="og:description" content="Relax. Clean. Satisfy your brain. Play Carpet Cleaning Simulator on Roblox.">
-    <meta property="og:image" content="https://cursefreestudios.com/uploads/icon-carpet.png">
+    <meta property="og:title" content="Curse Free Studios | We Said No Curses. Then We Made DAMN!">
+    <meta property="og:description" content="Curse Free Studios. We swore we wouldn't curse. Then we made DAMN! Nation, DARN!, and a bunch of Roblox games. Whoops.">
+    <meta property="og:image" content="https://cursefreestudios.com/uploads/Damn-new-bg.png">
     <meta property="og:site_name" content="Curse Free Studios">
 
+    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@DAMNondaX">
-    <meta name="twitter:title" content="Carpet Cleaning Simulator | Curse Free Studios">
-    <meta name="twitter:description" content="Relax. Clean. Satisfy your brain. Play Carpet Cleaning Simulator on Roblox.">
-    <meta name="twitter:image" content="https://cursefreestudios.com/uploads/icon-carpet.png">
+    <meta name="twitter:title" content="Curse Free Studios | We Said No Curses. Then We Made DAMN!">
+    <meta name="twitter:description" content="Curse Free Studios. We swore we wouldn't curse. Then we made DAMN! Nation, DARN!, and a bunch of Roblox games. Whoops.">
+    <meta name="twitter:image" content="https://cursefreestudios.com/uploads/Damn-new-bg.png">
 
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Curse Free Studios",
+      "url": "https://cursefreestudios.com",
+      "logo": "https://cursefreestudios.com/uploads/CFS-LOGO-TRANSPARENT-BACKGROUND___Complete-DARKRED.png",
+      "sameAs": [
+        "https://discord.gg/damn",
+        "https://www.youtube.com/@DAMNondatube",
+        "https://x.com/DAMNondaX"
+      ],
+      "description": "Curse Free Studios. We swore we wouldn't curse. Then we made DAMN! Nation. Independent game studio making games for mobile and Roblox."
+    }
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Barlow:wght@400;600&display=swap" rel="stylesheet">
-
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         :root {
-            --blue: #66baff;
-            --blue-bright: #99d0ff;
-            --black: #070d14;
-            --card-bg: #0d1a2a;
-            --border: rgba(102, 186, 255, 0.2);
-            --text: #e8f0f8;
-            --muted: #6a8aa8;
+            --red: #cc1a1a;
+            --red-bright: #ff2222;
+            --black: #0a0505;
+            --card-bg: #160a0a;
+            --border: rgba(204, 26, 26, 0.3);
+            --text: #f0e8e8;
+            --muted: #a08080;
         }
 
         body {
@@ -51,224 +68,245 @@
             width: 100%;
             z-index: 1000;
             padding: 14px 32px;
-            background: rgba(7, 13, 20, 0.92);
-            border-bottom: 1px solid var(--border);
+            background: rgba(10, 5, 5, 0.92);
+            border-bottom: 2px solid var(--border);
             backdrop-filter: blur(12px);
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
-        .nav-logo { height: 40px; width: auto; }
+        .nav-logo { height: 44px; width: auto; }
 
-        .nav-play {
-            font-family: 'Barlow Condensed', sans-serif;
-            font-size: 0.9rem;
-            font-weight: 700;
-            letter-spacing: 1px;
-            text-transform: uppercase;
+        .nav-links {
+            display: flex;
+            gap: 24px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text);
             text-decoration: none;
-            padding: 8px 20px;
-            border-radius: 6px;
-            background: var(--blue);
-            color: #07111f;
-            border: 2px solid var(--blue);
-            transition: all 0.2s;
-        }
-        .nav-play:hover { background: transparent; color: var(--blue); }
-
-        /* HERO */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 100px 32px 60px;
-            background: radial-gradient(ellipse at 50% 40%, #0d2540 0%, var(--black) 70%);
-            position: relative;
-        }
-
-        .hero-game-icon {
-            width: 120px;
-            height: 120px;
-            border-radius: 24px;
-            object-fit: cover;
-            margin-bottom: 24px;
-            box-shadow: 0 0 60px rgba(102, 186, 255, 0.3);
-        }
-
-        .hero-eyebrow {
-            font-family: 'Barlow Condensed', sans-serif;
-            font-size: 0.85rem;
-            font-weight: 700;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            color: var(--blue);
-            margin-bottom: 12px;
-        }
-
-        .hero h1 {
-            font-family: 'Barlow Condensed', sans-serif;
-            font-size: clamp(3rem, 8vw, 6rem);
-            font-weight: 900;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            line-height: 1;
-            margin-bottom: 20px;
-            color: #fff;
-        }
-
-        .hero-tagline {
-            font-size: 1.2rem;
-            color: var(--muted);
-            max-width: 480px;
-            line-height: 1.6;
-            margin-bottom: 40px;
-        }
-
-        /* LIVE STATS */
-        .stats-bar {
-            display: flex;
-            gap: 48px;
-            justify-content: center;
-            margin-bottom: 40px;
-            flex-wrap: wrap;
-        }
-
-        .stat {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 4px;
-        }
-
-        .stat-value {
-            font-family: 'Barlow Condensed', sans-serif;
-            font-size: clamp(2.2rem, 5vw, 3.5rem);
-            font-weight: 900;
-            color: var(--blue);
-            letter-spacing: 1px;
-            line-height: 1;
-            transition: opacity 0.3s;
-        }
-
-        .stat-label {
-            font-family: 'Barlow Condensed', sans-serif;
-            font-size: 0.8rem;
-            font-weight: 700;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            color: var(--muted);
-        }
-
-        .stat-live {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            font-family: 'Barlow Condensed', sans-serif;
-            font-size: 0.7rem;
-            font-weight: 700;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            color: #4cff91;
-        }
-
-        .stat-live-dot {
-            width: 7px;
-            height: 7px;
-            border-radius: 50%;
-            background: #4cff91;
-            animation: pulse 1.8s ease-in-out infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.4; transform: scale(0.7); }
-        }
-
-        .stat-divider {
-            width: 1px;
-            height: 48px;
-            background: var(--border);
-            align-self: center;
-        }
-
-        .loading { opacity: 0.35; }
-
-        .hero-cta {
-            display: flex;
-            gap: 12px;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .btn {
             font-family: 'Barlow Condensed', sans-serif;
             font-size: 1rem;
             font-weight: 700;
             letter-spacing: 1px;
             text-transform: uppercase;
-            text-decoration: none;
-            padding: 13px 28px;
-            border-radius: 8px;
-            transition: all 0.2s;
-            border: 2px solid;
-            cursor: pointer;
+            opacity: 0.8;
+            transition: opacity 0.2s, color 0.2s;
         }
 
-        .btn-blue { background: var(--blue); color: #07111f; border-color: var(--blue); }
-        .btn-blue:hover { background: transparent; color: var(--blue); }
-        .btn-outline { background: transparent; color: var(--text); border-color: rgba(255,255,255,0.2); }
-        .btn-outline:hover { border-color: var(--blue); color: var(--blue); }
+        .nav-links a:hover { opacity: 1; color: var(--red-bright); }
 
-        /* SECTION */
-        section { padding: 80px 32px; max-width: 960px; margin: 0 auto; }
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 120px 32px 60px;
+            background: radial-gradient(ellipse at center, #2a0808 0%, var(--black) 70%);
+        }
+
+        .hero-logo { width: 100px; max-width: 30vw; margin-bottom: 16px; }
+
+        .hero h1 {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            line-height: 1.1;
+            margin-bottom: 16px;
+        }
+
+        .hero h1 span { color: var(--red-bright); }
+
+        .hero p { font-size: 1.2rem; color: var(--muted); max-width: 560px; line-height: 1.6; }
+
+        section { padding: 100px 32px; max-width: 1100px; margin: 0 auto; }
 
         .section-label {
             font-family: 'Barlow Condensed', sans-serif;
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             font-weight: 700;
             letter-spacing: 0.15em;
             text-transform: uppercase;
-            color: var(--blue);
+            color: var(--red);
             margin-bottom: 8px;
         }
 
         .section-title {
             font-family: 'Barlow Condensed', sans-serif;
-            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            font-size: clamp(2rem, 4vw, 3rem);
             font-weight: 900;
             text-transform: uppercase;
             letter-spacing: 1px;
             margin-bottom: 16px;
         }
 
-        .section-divider { width: 48px; height: 3px; background: var(--blue); margin-bottom: 40px; }
+        .section-divider { width: 60px; height: 3px; background: var(--red); margin-bottom: 48px; }
 
-        /* COMMUNITY */
+        .featured-game {
+            background: linear-gradient(135deg, #1a0a2a 0%, #0a0515 60%, #0a0a0a 100%);
+            border: 1px solid rgba(102, 255, 170, 0.2);
+            border-radius: 16px;
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .featured-game.roblox {
+            background: linear-gradient(135deg, #0d1a2a 0%, #07111f 60%, #0a0a0a 100%);
+            border-color: rgba(102, 186, 255, 0.25);
+        }
+
+        .featured-game-img { width: 100%; height: 100%; min-height: 400px; object-fit: cover; }
+
+        .featured-game-body {
+            padding: 48px 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: linear-gradient(135deg, #1a0a2a, #0a0515);
+        }
+
+        .game-tag {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: #66ffaa;
+            margin-bottom: 12px;
+        }
+
+        .featured-game.roblox .game-tag { color: #66baff; }
+
+        .featured-game-body h3 {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 2.8rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            color: #fff;
+            line-height: 1;
+            margin-bottom: 16px;
+        }
+
+        .featured-game-body p { color: #a0b0a8; font-size: 1rem; line-height: 1.6; margin-bottom: 32px; }
+
+        .btn-group { display: flex; flex-wrap: wrap; gap: 10px; }
+
+        .btn {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            transition: all 0.2s;
+            border: 2px solid;
+        }
+
+        .btn-green { background: #66ffaa; color: #0a0515; border-color: #66ffaa; }
+        .btn-green:hover { background: transparent; color: #66ffaa; }
+        .btn-outline-green { background: transparent; color: #66ffaa; border-color: #66ffaa; }
+        .btn-outline-green:hover { background: #66ffaa; color: #0a0515; }
+        .btn-red { background: var(--red); color: #fff; border-color: var(--red); }
+        .btn-red:hover { background: var(--red-bright); border-color: var(--red-bright); }
+        .btn-blue { background: #66baff; color: #07111f; border-color: #66baff; }
+        .btn-blue:hover { background: transparent; color: #66baff; }
+        .btn-outline-blue { background: transparent; color: #66baff; border-color: #66baff; }
+        .btn-outline-blue:hover { background: #66baff; color: #07111f; }
+
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .game-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.2s;
+        }
+
+        .game-card:hover {
+            border-color: var(--red);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 32px rgba(204, 26, 26, 0.2);
+        }
+
+        .game-card-img {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+            display: block;
+        }
+
+        .game-card-img.wide {
+            aspect-ratio: 460 / 215;
+        }
+
+        .game-card-body { padding: 24px; }
+
+        .game-card-body .tag {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--red);
+            margin-bottom: 6px;
+        }
+
+        .game-card-body h3 {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            color: var(--text);
+            margin-bottom: 8px;
+        }
+
+        .game-card-body p { font-size: 0.9rem; color: var(--muted); line-height: 1.5; margin-bottom: 16px; }
+
+        footer { border-top: 1px solid var(--border); padding: 40px 32px; text-align: center; color: var(--muted); font-size: 0.85rem; }
+
+        .footer-links { display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; margin-bottom: 16px; }
+
+        footer a { color: var(--muted); text-decoration: none; transition: color 0.2s; }
+        footer a:hover { color: var(--red-bright); }
+
         .community-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 32px;
+            gap: 40px;
             align-items: start;
         }
 
         .discord-widget iframe {
             width: 100%;
-            height: 320px;
+            height: 340px;
             border: none;
             border-radius: 12px;
         }
 
-        .social-links { display: flex; flex-direction: column; gap: 10px; }
+        .social-links {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
 
         .social-link {
             display: flex;
             align-items: center;
             gap: 14px;
-            padding: 14px 18px;
+            padding: 16px 20px;
             background: var(--card-bg);
             border: 1px solid var(--border);
             border-radius: 10px;
@@ -282,40 +320,71 @@
             transition: all 0.2s;
         }
 
-        .social-link:hover { border-color: var(--blue); color: var(--blue-bright); transform: translateX(4px); }
-
-        .social-link .sub {
-            color: var(--muted);
-            font-size: 0.78rem;
-            font-weight: 400;
-            text-transform: none;
-            letter-spacing: 0;
-            display: block;
-            margin-top: 2px;
+        .social-link:hover {
+            border-color: var(--red);
+            color: var(--red-bright);
+            transform: translateX(4px);
         }
 
-        footer {
-            border-top: 1px solid var(--border);
-            padding: 32px;
-            text-align: center;
-            color: var(--muted);
-            font-size: 0.82rem;
-        }
+        .social-link .platform { color: var(--muted); font-size: 0.8rem; font-weight: 400; text-transform: none; letter-spacing: 0; display: block; margin-top: 2px; }
 
-        .footer-links {
+        .ccs-stats {
             display: flex;
-            justify-content: center;
+            align-items: center;
             gap: 20px;
-            flex-wrap: wrap;
-            margin-bottom: 12px;
+            margin-bottom: 28px;
         }
 
-        footer a { color: var(--muted); text-decoration: none; transition: color 0.2s; }
-        footer a:hover { color: var(--blue); }
+        .ccs-stat {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
 
-        @media (max-width: 680px) {
+        .ccs-stat-value {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: #66baff;
+            line-height: 1;
+        }
+
+        .ccs-stat-label {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: #5a7a9a;
+        }
+
+        .ccs-stat-divider {
+            width: 1px;
+            height: 36px;
+            background: rgba(102, 186, 255, 0.2);
+        }
+
+        .ccs-live-dot {
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #4cff91;
+            margin-top: 4px;
+            animation: ccs-pulse 1.8s ease-in-out infinite;
+        }
+
+        @keyframes ccs-pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+
+        @media (max-width: 768px) {
             nav { padding: 12px 20px; }
-            .stat-divider { display: none; }
+            .nav-links { display: none; }
+            .featured-game { grid-template-columns: 1fr; }
+            .featured-game-img { min-height: 240px; }
+            .featured-game-body { padding: 32px 24px; }
             section { padding: 60px 20px; }
             .community-grid { grid-template-columns: 1fr; }
         }
@@ -325,33 +394,114 @@
 
     <nav>
         <img src="./uploads/CFS-LOGO-TRANSPARENT-BACKGROUND___Complete-DARKRED.png" alt="Curse Free Studios" class="nav-logo">
-        <a href="https://www.roblox.com/games/124374448373637/Carpet-Cleaning-Simulator" target="_blank" rel="noopener" class="nav-play">Play Now</a>
+        <ul class="nav-links">
+            <li><a href="#damn-ip">DAMN!</a></li>
+            <li><a href="#roblox">Roblox</a></li>
+            <li><a href="#community">Community</a></li>
+            <li><a href="#about">About</a></li>
+        </ul>
     </nav>
 
     <div class="hero">
-        <img src="./uploads/icon-carpet.png" alt="Carpet Cleaning Simulator" class="hero-game-icon">
-        <div class="hero-eyebrow">Roblox &bull; Early Access</div>
-        <h1>Carpet Cleaning<br>Simulator</h1>
-        <p class="hero-tagline">Relax. Clean. Satisfy your brain. Scrub, spray, and restore dirty carpets to perfection — one stain at a time.</p>
-
-        <div class="stats-bar">
-            <div class="stat">
-                <div class="stat-value loading" id="stat-playing">—</div>
-                <div class="stat-label">Playing Now</div>
-                <div class="stat-live"><span class="stat-live-dot"></span> Live</div>
-            </div>
-            <div class="stat-divider"></div>
-            <div class="stat">
-                <div class="stat-value loading" id="stat-visits">—</div>
-                <div class="stat-label">Total Visits</div>
-            </div>
-        </div>
-
-        <div class="hero-cta">
-            <a href="https://www.roblox.com/games/124374448373637/Carpet-Cleaning-Simulator" target="_blank" rel="noopener" class="btn btn-blue">Play on Roblox</a>
-            <a href="https://www.roblox.com/communities/1053252767/Curse-Free-Studios#!/about" target="_blank" rel="noopener" class="btn btn-outline">Join the Community</a>
-        </div>
+        <img src="./uploads/CFS-LOGO-TRANSPARENT-BACKGROUND___Complete-DARKRED.png" alt="Curse Free Studios" class="hero-logo">
+        <h1>We said <span>no curses.</span></h1>
+        <p>Then we made DAMN! Nation. We're an independent studio building the DAMN! franchise and Roblox games side by side—different vibes, equal focus.</p>
     </div>
+
+    <section id="damn-ip">
+        <div class="section-label">DAMN! Franchise</div>
+        <div class="section-title">The DAMN! Universe</div>
+        <div class="section-divider"></div>
+        <div class="featured-game" style="margin-bottom: 24px;">
+            <img src="./uploads/Damn-new-bg.png" alt="DAMN! Nation" class="featured-game-img">
+            <div class="featured-game-body">
+                <div class="game-tag">Mobile &bull; Roguelite Shooter</div>
+                <h3>DAMN!<br>Nation</h3>
+                <p>Demons are terrorizing the neighborhood! Hunt down neighbors from hell in this action-packed mobile roguelite shooter. Out now on iOS and Android.</p>
+                <div class="btn-group">
+                    <a href="/damn-nation/" class="btn btn-green">Learn More</a>
+                    <a href="https://apps.apple.com/us/app/damn-nation/id6695727121" target="_blank" rel="noopener" class="btn btn-outline-green">App Store</a>
+                    <a href="https://play.google.com/store/apps/details?id=com.cursefreestudios.damnnation" target="_blank" rel="noopener" class="btn btn-outline-green">Google Play</a>
+                </div>
+            </div>
+        </div>
+        <div class="games-grid">
+
+            <div class="game-card">
+                <img src="./uploads/icon-damn-steam.jpg" alt="DAMN!" class="game-card-img wide">
+                <div class="game-card-body">
+                    <div class="tag">PC &bull; Coming to Steam</div>
+                    <h3>DAMN!</h3>
+                    <p>A standalone PC game set in the DAMN! universe. Wishlist it now on Steam and be first to know when it launches.</p>
+                    <a href="https://store.steampowered.com/app/1372650/DAMN/" target="_blank" rel="noopener" class="btn btn-red">Wishlist on Steam</a>
+                </div>
+            </div>
+
+            <div class="game-card">
+                <img src="./uploads/icon-darn.png" alt="DARN!" class="game-card-img">
+                <div class="game-card-body">
+                    <div class="tag">Roblox &bull; DAMN! Spin-Off</div>
+                    <h3>DARN!</h3>
+                    <p>The Roblox companion in the DAMN! franchise. Jump in and blast neighbors from hell.</p>
+                    <a href="https://www.roblox.com/games/130082403089609/DARN" target="_blank" rel="noopener" class="btn btn-red">Play on Roblox</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="roblox">
+        <div class="section-label">Roblox</div>
+        <div class="section-title">Roblox Games</div>
+        <div class="section-divider"></div>
+        <div class="featured-game roblox" style="margin-bottom: 24px;">
+            <img src="./uploads/icon-carpet.png" alt="Carpet Cleaning Simulator" class="featured-game-img">
+            <div class="featured-game-body" style="background: linear-gradient(135deg, #0d1a2a, #07111f);">
+                <div class="game-tag">Roblox &bull; Simulator</div>
+                <h3>Carpet Cleaning<br>Simulator</h3>
+                <p>Our current Roblox focus: scrub, clean, and satisfy your way through endless dirty carpets. Surprisingly intense. Weirdly satisfying.</p>
+                <div class="ccs-stats">
+                    <div class="ccs-stat">
+                        <span class="ccs-stat-value" id="ccs-playing">—</span>
+                        <span class="ccs-stat-label">Playing Now</span>
+                        <span class="ccs-live-dot"></span>
+                    </div>
+                    <div class="ccs-stat-divider"></div>
+                    <div class="ccs-stat">
+                        <span class="ccs-stat-value" id="ccs-visits">—</span>
+                        <span class="ccs-stat-label">Total Visits</span>
+                    </div>
+                </div>
+                <div class="btn-group">
+                    <a href="https://www.roblox.com/games/124374448373637/Carpet-Cleaning-Simulator" target="_blank" rel="noopener" class="btn btn-blue">Play on Roblox</a>
+                    <a href="https://www.roblox.com/communities/1053252767/Curse-Free-Studios#!/about" target="_blank" rel="noopener" class="btn btn-outline-blue">Join the Community</a>
+                </div>
+            </div>
+        </div>
+        <div class="games-grid">
+
+            <div class="game-card">
+                <img src="./uploads/icon-carpet.png" alt="Carpet Cleaning Simulator" class="game-card-img">
+                <div class="game-card-body">
+                    <div class="tag">Roblox &bull; Current Release</div>
+                    <h3>Carpet Cleaning Simulator</h3>
+                    <p>The Roblox game we're actively pushing right now. Jump in, start cleaning, and compete for the cleanest runs.</p>
+                    <a href="https://www.roblox.com/games/124374448373637/Carpet-Cleaning-Simulator" target="_blank" rel="noopener" class="btn btn-red">Play on Roblox</a>
+                </div>
+            </div>
+
+            <div class="game-card">
+                <img src="./uploads/CFS-LOGO-TRANSPARENT-BACKGROUND___Complete-DARKRED.png" alt="Next Roblox Game Teaser" class="game-card-img">
+                <div class="game-card-body">
+                    <div class="tag">Roblox &bull; Up Next</div>
+                    <h3>?</h3>
+                    <p>To Be Revealed...</p>
+                    <a href="#community" class="btn btn-red">Follow for Reveal</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
 
     <section id="community">
         <div class="section-label">Community</div>
@@ -364,22 +514,33 @@
             <div class="social-links">
                 <a href="https://discord.gg/damn" target="_blank" rel="noopener" class="social-link">
                     Discord
-                    <span class="sub">Join the server</span>
+                    <span class="platform">Join the DAMN! server</span>
                 </a>
                 <a href="https://www.youtube.com/@DAMNondatube" target="_blank" rel="noopener" class="social-link">
                     YouTube
-                    <span class="sub">@DAMNondatube</span>
+                    <span class="platform">DAMN! on YouTube</span>
                 </a>
                 <a href="https://x.com/DAMNondaX/" target="_blank" rel="noopener" class="social-link">
                     X (Twitter)
-                    <span class="sub">@DAMNondaX</span>
+                    <span class="platform">DAMN! on X</span>
                 </a>
                 <a href="https://www.instagram.com/damnondagram" target="_blank" rel="noopener" class="social-link">
                     Instagram
-                    <span class="sub">@damnondagram</span>
+                    <span class="platform">@damnondagram</span>
+                </a>
+                <a href="https://www.facebook.com/demonsatemyneighbors" target="_blank" rel="noopener" class="social-link">
+                    Facebook
+                    <span class="platform">Demons Ate My Neighbors</span>
                 </a>
             </div>
         </div>
+    </section>
+
+    <section id="about">
+        <div class="section-label">About</div>
+        <div class="section-title">Curse Free Studios</div>
+        <div class="section-divider"></div>
+        <p style="font-size: 1.1rem; line-height: 1.8; color: var(--muted); max-width: 640px;">We started with a promise: no curses. Then we named our game DAMN!, leaned hard into that franchise, and started building Roblox games right alongside it. Right now our Roblox spotlight is Carpet Cleaning Simulator while the DAMN! universe keeps growing on mobile and PC. The name is ironic. The games are real.</p>
     </section>
 
     <footer>
@@ -388,6 +549,10 @@
             <a href="https://www.youtube.com/@DAMNondatube" target="_blank" rel="noopener">YouTube</a>
             <a href="https://x.com/DAMNondaX/" target="_blank" rel="noopener">X</a>
             <a href="https://www.instagram.com/damnondagram" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://www.facebook.com/demonsatemyneighbors" target="_blank" rel="noopener">Facebook</a>
+            <a href="https://apps.apple.com/us/app/damn-nation/id6695727121" target="_blank" rel="noopener">App Store</a>
+            <a href="https://play.google.com/store/apps/details?id=com.cursefreestudios.damnnation" target="_blank" rel="noopener">Google Play</a>
+            <a href="https://store.steampowered.com/app/1372650/DAMN/" target="_blank" rel="noopener">Steam</a>
             <a href="https://www.roblox.com/games/124374448373637/Carpet-Cleaning-Simulator" target="_blank" rel="noopener">Roblox</a>
         </div>
         <p>&copy; 2026 Curse Free Studios. All rights reserved.</p>
@@ -399,29 +564,17 @@
             if (n >= 1_000) return (n / 1_000).toFixed(1).replace(/\.0$/, '') + 'K';
             return n.toLocaleString();
         }
-
-        async function loadStats() {
+        async function loadCCSStats() {
             try {
                 const res = await fetch('/api/roblox-stats');
                 if (!res.ok) throw new Error();
                 const { playing, visits } = await res.json();
-
-                const pEl = document.getElementById('stat-playing');
-                const vEl = document.getElementById('stat-visits');
-
-                pEl.textContent = fmt(playing);
-                vEl.textContent = fmt(visits);
-                pEl.classList.remove('loading');
-                vEl.classList.remove('loading');
-            } catch {
-                document.getElementById('stat-playing').textContent = '—';
-                document.getElementById('stat-visits').textContent = '—';
-            }
+                document.getElementById('ccs-playing').textContent = fmt(playing);
+                document.getElementById('ccs-visits').textContent = fmt(visits);
+            } catch {}
         }
-
-        loadStats();
-        setInterval(loadStats, 60_000);
+        loadCCSStats();
+        setInterval(loadCCSStats, 60_000);
     </script>
-
 </body>
 </html>
