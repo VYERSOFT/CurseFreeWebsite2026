@@ -1,260 +1,499 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Curse Free Studios | Official Site</title>
-  <meta name="description" content="Curse Free Studios is an indie team behind DAMN! Nation, DARN!, and Roblox experiences.">
-  <link rel="canonical" href="https://cursefreestudios.com/">
-  <link rel="icon" type="image/png" href="./uploads/CFS-LOGO-TRANSPARENT-BACKGROUND___Complete-DARKRED.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;600;700&family=Barlow+Condensed:wght@700;900&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg: #090607;
-      --card: #151012;
-      --text: #f8f3f3;
-      --muted: #b7a2a7;
-      --red: #cc1a1a;
-      --green: #66ffaa;
-      --blue: #66baff;
-      --border: rgba(255,255,255,0.14);
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curse Free Studios | We Said No Curses. Then We Made DAMN!</title>
+    <meta name="description" content="Curse Free Studios. We swore we wouldn't curse. Then we made DAMN! Nation, DARN!, and a bunch of Roblox games. Whoops. Independent game studio making games for mobile and Roblox.">
+    <link rel="canonical" href="https://cursefreestudios.com/">
+    <link rel="icon" type="image/png" sizes="32x32" href="./uploads/CFS-LOGO-TRANSPARENT-BACKGROUND___Complete-DARKRED.png">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://cursefreestudios.com/">
+    <meta property="og:title" content="Curse Free Studios | We Said No Curses. Then We Made DAMN!">
+    <meta property="og:description" content="Curse Free Studios. We swore we wouldn't curse. Then we made DAMN! Nation, DARN!, and a bunch of Roblox games. Whoops.">
+    <meta property="og:image" content="https://cursefreestudios.com/uploads/Damn-new-bg.png">
+    <meta property="og:site_name" content="Curse Free Studios">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@DAMNondaX">
+    <meta name="twitter:title" content="Curse Free Studios | We Said No Curses. Then We Made DAMN!">
+    <meta name="twitter:description" content="Curse Free Studios. We swore we wouldn't curse. Then we made DAMN! Nation, DARN!, and a bunch of Roblox games. Whoops.">
+    <meta name="twitter:image" content="https://cursefreestudios.com/uploads/Damn-new-bg.png">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Curse Free Studios",
+      "url": "https://cursefreestudios.com",
+      "logo": "https://cursefreestudios.com/uploads/CFS-LOGO-TRANSPARENT-BACKGROUND___Complete-DARKRED.png",
+      "sameAs": [
+        "https://discord.gg/damn",
+        "https://www.youtube.com/@DAMNondatube",
+        "https://x.com/DAMNondaX"
+      ],
+      "description": "Curse Free Studios. We swore we wouldn't curse. Then we made DAMN! Nation. Independent game studio making games for mobile and Roblox."
     }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Barlow:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+        :root {
+            --red: #cc1a1a;
+            --red-bright: #ff2222;
+            --black: #0a0505;
+            --card-bg: #160a0a;
+            --border: rgba(204, 26, 26, 0.3);
+            --text: #f0e8e8;
+            --muted: #a08080;
+        }
 
-    body {
-      font-family: 'Barlow', Arial, sans-serif;
-      background: radial-gradient(circle at top, #2a0f14 0%, var(--bg) 60%);
-      color: var(--text);
-      line-height: 1.5;
-    }
+        body {
+            font-family: 'Barlow', Arial, sans-serif;
+            background: var(--black);
+            color: var(--text);
+            overflow-x: hidden;
+        }
 
-    a { color: inherit; }
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 14px 32px;
+            background: rgba(10, 5, 5, 0.92);
+            border-bottom: 2px solid var(--border);
+            backdrop-filter: blur(12px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-    .container {
-      width: min(1100px, 92vw);
-      margin: 0 auto;
-    }
+        .nav-logo { height: 44px; width: auto; }
 
-    header {
-      padding: 24px 0;
-      position: sticky;
-      top: 0;
-      backdrop-filter: blur(8px);
-      background: rgba(9, 6, 7, 0.8);
-      border-bottom: 1px solid var(--border);
-      z-index: 20;
-    }
+        .nav-links {
+            display: flex;
+            gap: 24px;
+            list-style: none;
+        }
 
-    .nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 16px;
-    }
+        .nav-links a {
+            color: var(--text);
+            text-decoration: none;
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            opacity: 0.8;
+            transition: opacity 0.2s, color 0.2s;
+        }
 
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      text-decoration: none;
-      font-family: 'Barlow Condensed', sans-serif;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      font-weight: 700;
-    }
+        .nav-links a:hover { opacity: 1; color: var(--red-bright); }
 
-    .logo img {
-      width: 44px;
-      height: 44px;
-      object-fit: contain;
-    }
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 120px 32px 60px;
+            background: radial-gradient(ellipse at center, #2a0808 0%, var(--black) 70%);
+        }
 
-    .nav-links {
-      display: flex;
-      gap: 18px;
-      list-style: none;
-      color: var(--muted);
-      font-weight: 600;
-    }
+        .hero-logo { width: 100px; max-width: 30vw; margin-bottom: 16px; }
 
-    .hero {
-      text-align: center;
-      padding: 76px 0 48px;
-    }
+        .hero h1 {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            line-height: 1.1;
+            margin-bottom: 16px;
+        }
 
-    .hero h1 {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: clamp(2.1rem, 7vw, 4.2rem);
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 12px;
-    }
+        .hero h1 span { color: var(--red-bright); }
 
-    .hero h1 span { color: var(--red); }
+        .hero p { font-size: 1.2rem; color: var(--muted); max-width: 560px; line-height: 1.6; }
 
-    .hero p {
-      width: min(720px, 100%);
-      margin: 0 auto;
-      color: var(--muted);
-      font-size: clamp(1rem, 2.8vw, 1.2rem);
-    }
+        section { padding: 100px 32px; max-width: 1100px; margin: 0 auto; }
 
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 20px;
-      padding-bottom: 48px;
-    }
+        .section-label {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--red);
+            margin-bottom: 8px;
+        }
 
-    .card {
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)), var(--card);
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-    }
+        .section-title {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+        }
 
-    .card img {
-      width: 100%;
-      height: 190px;
-      object-fit: cover;
-    }
+        .section-divider { width: 60px; height: 3px; background: var(--red); margin-bottom: 48px; }
 
-    .card-content {
-      padding: 18px;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      flex: 1;
-    }
+        .featured-game {
+            background: linear-gradient(135deg, #1a0a2a 0%, #0a0515 60%, #0a0a0a 100%);
+            border: 1px solid rgba(102, 255, 170, 0.2);
+            border-radius: 16px;
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
 
-    .eyebrow {
-      font-size: 0.8rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
+        .featured-game.roblox {
+            background: linear-gradient(135deg, #0d1a2a 0%, #07111f 60%, #0a0a0a 100%);
+            border-color: rgba(102, 186, 255, 0.25);
+        }
 
-    .green { color: var(--green); }
-    .red { color: #ff7a7a; }
-    .blue { color: var(--blue); }
+        .featured-game-img { width: 100%; height: 100%; min-height: 400px; object-fit: cover; }
 
-    h2 {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 1.9rem;
-      text-transform: uppercase;
-      line-height: 1;
-    }
+        .featured-game-body {
+            padding: 48px 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: linear-gradient(135deg, #1a0a2a, #0a0515);
+        }
 
-    .card p { color: var(--muted); }
+        .game-tag {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: #66ffaa;
+            margin-bottom: 12px;
+        }
 
-    .btn-row {
-      margin-top: auto;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
+        .featured-game.roblox .game-tag { color: #66baff; }
 
-    .btn {
-      text-decoration: none;
-      border-radius: 8px;
-      border: 2px solid currentColor;
-      padding: 8px 14px;
-      font-family: 'Barlow Condensed', sans-serif;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-      font-weight: 700;
-      transition: 0.2s ease;
-    }
+        .featured-game-body h3 {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 2.8rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            color: #fff;
+            line-height: 1;
+            margin-bottom: 16px;
+        }
 
-    .btn:hover {
-      transform: translateY(-1px);
-      filter: brightness(1.1);
-    }
+        .featured-game-body p { color: #a0b0a8; font-size: 1rem; line-height: 1.6; margin-bottom: 32px; }
 
-    .footer {
-      border-top: 1px solid var(--border);
-      padding: 26px 0 36px;
-      text-align: center;
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
+        .btn-group { display: flex; flex-wrap: wrap; gap: 10px; }
 
-    @media (max-width: 700px) {
-      .nav-links { display: none; }
-    }
-  </style>
+        .btn {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            transition: all 0.2s;
+            border: 2px solid;
+        }
+
+        .btn-green { background: #66ffaa; color: #0a0515; border-color: #66ffaa; }
+        .btn-green:hover { background: transparent; color: #66ffaa; }
+        .btn-outline-green { background: transparent; color: #66ffaa; border-color: #66ffaa; }
+        .btn-outline-green:hover { background: #66ffaa; color: #0a0515; }
+        .btn-red { background: var(--red); color: #fff; border-color: var(--red); }
+        .btn-red:hover { background: var(--red-bright); border-color: var(--red-bright); }
+        .btn-blue { background: #66baff; color: #07111f; border-color: #66baff; }
+        .btn-blue:hover { background: transparent; color: #66baff; }
+        .btn-outline-blue { background: transparent; color: #66baff; border-color: #66baff; }
+        .btn-outline-blue:hover { background: #66baff; color: #07111f; }
+
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .game-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.2s;
+        }
+
+        .game-card:hover {
+            border-color: var(--red);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 32px rgba(204, 26, 26, 0.2);
+        }
+
+        .game-card-img {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+            display: block;
+        }
+
+        .game-card-img.wide {
+            aspect-ratio: 460 / 215;
+        }
+
+        .game-card-body { padding: 24px; }
+
+        .game-card-body .tag {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--red);
+            margin-bottom: 6px;
+        }
+
+        .game-card-body h3 {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            color: var(--text);
+            margin-bottom: 8px;
+        }
+
+        .game-card-body p { font-size: 0.9rem; color: var(--muted); line-height: 1.5; margin-bottom: 16px; }
+
+        footer { border-top: 1px solid var(--border); padding: 40px 32px; text-align: center; color: var(--muted); font-size: 0.85rem; }
+
+        .footer-links { display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; margin-bottom: 16px; }
+
+        footer a { color: var(--muted); text-decoration: none; transition: color 0.2s; }
+        footer a:hover { color: var(--red-bright); }
+
+        .community-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        .discord-widget iframe {
+            width: 100%;
+            height: 340px;
+            border: none;
+            border-radius: 12px;
+        }
+
+        .social-links {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 16px 20px;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            text-decoration: none;
+            color: var(--text);
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            transition: all 0.2s;
+        }
+
+        .social-link:hover {
+            border-color: var(--red);
+            color: var(--red-bright);
+            transform: translateX(4px);
+        }
+
+        .social-link .platform { color: var(--muted); font-size: 0.8rem; font-weight: 400; text-transform: none; letter-spacing: 0; display: block; margin-top: 2px; }
+
+        @media (max-width: 768px) {
+            nav { padding: 12px 20px; }
+            .nav-links { display: none; }
+            .featured-game { grid-template-columns: 1fr; }
+            .featured-game-img { min-height: 240px; }
+            .featured-game-body { padding: 32px 24px; }
+            section { padding: 60px 20px; }
+            .community-grid { grid-template-columns: 1fr; }
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <div class="container nav">
-      <a class="logo" href="#top">
-        <img src="./uploads/CFS-LOGO-TRANSPARENT-BACKGROUND___Complete-DARKRED.png" alt="Curse Free Studios logo">
-        <span>Curse Free Studios</span>
-      </a>
-      <ul class="nav-links">
-        <li><a href="#games">Games</a></li>
-        <li><a href="/damn-nation/">DAMN! Nation</a></li>
-        <li><a href="https://x.com/DAMNondaX">X</a></li>
-      </ul>
-    </div>
-  </header>
 
-  <main id="top" class="container">
-    <section class="hero">
-      <h1>We said no curses.<br><span>Then we shipped DAMN!</span></h1>
-      <p>One clean landing page replacing the conflicting versions. Everything now routes from a single homepage with clear paths to each game and social channel.</p>
+    <nav>
+        <img src="./uploads/CFS-LOGO-TRANSPARENT-BACKGROUND___Complete-DARKRED.png" alt="Curse Free Studios" class="nav-logo">
+        <ul class="nav-links">
+            <li><a href="#damn-ip">DAMN!</a></li>
+            <li><a href="#roblox">Roblox</a></li>
+            <li><a href="#community">Community</a></li>
+            <li><a href="#about">About</a></li>
+        </ul>
+    </nav>
+
+    <div class="hero">
+        <img src="./uploads/CFS-LOGO-TRANSPARENT-BACKGROUND___Complete-DARKRED.png" alt="Curse Free Studios" class="hero-logo">
+        <h1>We said <span>no curses.</span></h1>
+        <p>Then we made DAMN! Nation. We're an independent studio building the DAMN! franchise and Roblox games side by side—different vibes, equal focus.</p>
+    </div>
+
+    <section id="damn-ip">
+        <div class="section-label">DAMN! Franchise</div>
+        <div class="section-title">The DAMN! Universe</div>
+        <div class="section-divider"></div>
+        <div class="featured-game" style="margin-bottom: 24px;">
+            <img src="./uploads/Damn-new-bg.png" alt="DAMN! Nation" class="featured-game-img">
+            <div class="featured-game-body">
+                <div class="game-tag">Mobile &bull; Roguelite Shooter</div>
+                <h3>DAMN!<br>Nation</h3>
+                <p>Demons are terrorizing the neighborhood! Hunt down neighbors from hell in this action-packed mobile roguelite shooter. Out now on iOS and Android.</p>
+                <div class="btn-group">
+                    <a href="/damn-nation/" class="btn btn-green">Learn More</a>
+                    <a href="https://apps.apple.com/us/app/damn-nation/id6695727121" target="_blank" rel="noopener" class="btn btn-outline-green">App Store</a>
+                    <a href="https://play.google.com/store/apps/details?id=com.cursefreestudios.damnnation" target="_blank" rel="noopener" class="btn btn-outline-green">Google Play</a>
+                </div>
+            </div>
+        </div>
+        <div class="games-grid">
+
+            <div class="game-card">
+                <img src="./uploads/icon-damn-steam.jpg" alt="DAMN!" class="game-card-img wide">
+                <div class="game-card-body">
+                    <div class="tag">PC &bull; Coming to Steam</div>
+                    <h3>DAMN!</h3>
+                    <p>A standalone PC game set in the DAMN! universe. Wishlist it now on Steam and be first to know when it launches.</p>
+                    <a href="https://store.steampowered.com/app/1372650/DAMN/" target="_blank" rel="noopener" class="btn btn-red">Wishlist on Steam</a>
+                </div>
+            </div>
+
+            <div class="game-card">
+                <img src="./uploads/icon-darn.png" alt="DARN!" class="game-card-img">
+                <div class="game-card-body">
+                    <div class="tag">Roblox &bull; DAMN! Spin-Off</div>
+                    <h3>DARN!</h3>
+                    <p>The Roblox companion in the DAMN! franchise. Jump in and blast neighbors from hell.</p>
+                    <a href="https://www.roblox.com/games/130082403089609/DARN" target="_blank" rel="noopener" class="btn btn-red">Play on Roblox</a>
+                </div>
+            </div>
+
+        </div>
     </section>
 
-    <section id="games" class="cards">
-      <article class="card">
-        <img src="./uploads/Damn-new-bg.png" alt="DAMN! Nation key art">
-        <div class="card-content">
-          <span class="eyebrow green">Mobile Roguelite Shooter</span>
-          <h2>DAMN! Nation</h2>
-          <p>Fight through demon-infested neighborhoods with exorcism-powered chaos.</p>
-          <div class="btn-row">
-            <a class="btn green" href="/damn-nation/">Visit game page</a>
-            <a class="btn green" href="https://apps.apple.com/us/app/damn-nation/id6695727121">App Store</a>
-          </div>
+    <section id="roblox">
+        <div class="section-label">Roblox</div>
+        <div class="section-title">Roblox Games</div>
+        <div class="section-divider"></div>
+        <div class="featured-game roblox" style="margin-bottom: 24px;">
+            <img src="./uploads/icon-carpet.png" alt="Carpet Cleaning Simulator" class="featured-game-img">
+            <div class="featured-game-body" style="background: linear-gradient(135deg, #0d1a2a, #07111f);">
+                <div class="game-tag">Roblox &bull; Simulator</div>
+                <h3>Carpet Cleaning<br>Simulator</h3>
+                <p>Our current Roblox focus: scrub, clean, and satisfy your way through endless dirty carpets. Surprisingly intense. Weirdly satisfying.</p>
+                <div class="btn-group">
+                    <a href="https://www.roblox.com/games/124374448373637/Carpet-Cleaning-Simulator" target="_blank" rel="noopener" class="btn btn-blue">Play on Roblox</a>
+                    <a href="#community" class="btn btn-outline-blue">Join the Community</a>
+                </div>
+            </div>
         </div>
-      </article>
+        <div class="games-grid">
 
-      <article class="card">
-        <img src="./uploads/screen3.jpg" alt="DARN gameplay screenshot">
-        <div class="card-content">
-          <span class="eyebrow red">Arcade Chaos</span>
-          <h2>DARN!</h2>
-          <p>A fast, loud, family-friendly take on old-school arena mayhem.</p>
-          <div class="btn-row">
-            <a class="btn red" href="https://www.youtube.com/@DAMNondatube">Watch videos</a>
-          </div>
-        </div>
-      </article>
+            <div class="game-card">
+                <img src="./uploads/icon-carpet.png" alt="Carpet Cleaning Simulator" class="game-card-img">
+                <div class="game-card-body">
+                    <div class="tag">Roblox &bull; Current Release</div>
+                    <h3>Carpet Cleaning Simulator</h3>
+                    <p>The Roblox game we're actively pushing right now. Jump in, start cleaning, and compete for the cleanest runs.</p>
+                    <a href="https://www.roblox.com/games/124374448373637/Carpet-Cleaning-Simulator" target="_blank" rel="noopener" class="btn btn-red">Play on Roblox</a>
+                </div>
+            </div>
 
-      <article class="card">
-        <img src="./uploads/screen6.jpg" alt="Roblox experiences collage">
-        <div class="card-content">
-          <span class="eyebrow blue">Roblox Worlds</span>
-          <h2>More Games</h2>
-          <p>We keep experimenting with weird ideas, cool cosmetics, and community-first updates.</p>
-          <div class="btn-row">
-            <a class="btn blue" href="https://discord.gg/damn">Join Discord</a>
-            <a class="btn blue" href="https://x.com/DAMNondaX">Follow on X</a>
-          </div>
+            <div class="game-card">
+                <img src="./uploads/CFS-LOGO-TRANSPARENT-BACKGROUND___Complete-DARKRED.png" alt="Next Roblox Game Teaser" class="game-card-img">
+                <div class="game-card-body">
+                    <div class="tag">Roblox &bull; Up Next</div>
+                    <h3>?</h3>
+                    <p>To Be Revealed...</p>
+                    <a href="#community" class="btn btn-red">Follow for Reveal</a>
+                </div>
+            </div>
+
         </div>
-      </article>
     </section>
-  </main>
 
-  <footer class="footer">
-    <div class="container">
-      © 2026 Curse Free Studios · cursefreestudios.com
-    </div>
-  </footer>
+    <section id="community">
+        <div class="section-label">Community</div>
+        <div class="section-title">Join the Crew</div>
+        <div class="section-divider"></div>
+        <div class="community-grid">
+            <div class="discord-widget">
+                <iframe src="https://invidget.switchblade.xyz/damn?theme=dark" title="Discord Server"></iframe>
+            </div>
+            <div class="social-links">
+                <a href="https://discord.gg/damn" target="_blank" rel="noopener" class="social-link">
+                    Discord
+                    <span class="platform">Join the DAMN! server</span>
+                </a>
+                <a href="https://www.youtube.com/@DAMNondatube" target="_blank" rel="noopener" class="social-link">
+                    YouTube
+                    <span class="platform">DAMN! on YouTube</span>
+                </a>
+                <a href="https://x.com/DAMNondaX/" target="_blank" rel="noopener" class="social-link">
+                    X (Twitter)
+                    <span class="platform">DAMN! on X</span>
+                </a>
+                <a href="https://www.instagram.com/damnondagram" target="_blank" rel="noopener" class="social-link">
+                    Instagram
+                    <span class="platform">@damnondagram</span>
+                </a>
+                <a href="https://www.facebook.com/demonsatemyneighbors" target="_blank" rel="noopener" class="social-link">
+                    Facebook
+                    <span class="platform">Demons Ate My Neighbors</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="section-label">About</div>
+        <div class="section-title">Curse Free Studios</div>
+        <div class="section-divider"></div>
+        <p style="font-size: 1.1rem; line-height: 1.8; color: var(--muted); max-width: 640px;">We started with a promise: no curses. Then we named our game DAMN!, leaned hard into that franchise, and started building Roblox games right alongside it. Right now our Roblox spotlight is Carpet Cleaning Simulator while the DAMN! universe keeps growing on mobile and PC. The name is ironic. The games are real.</p>
+    </section>
+
+    <footer>
+        <div class="footer-links">
+            <a href="https://discord.gg/damn" target="_blank" rel="noopener">Discord</a>
+            <a href="https://www.youtube.com/@DAMNondatube" target="_blank" rel="noopener">YouTube</a>
+            <a href="https://x.com/DAMNondaX/" target="_blank" rel="noopener">X</a>
+            <a href="https://www.instagram.com/damnondagram" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://www.facebook.com/demonsatemyneighbors" target="_blank" rel="noopener">Facebook</a>
+            <a href="https://apps.apple.com/us/app/damn-nation/id6695727121" target="_blank" rel="noopener">App Store</a>
+            <a href="https://play.google.com/store/apps/details?id=com.cursefreestudios.damnnation" target="_blank" rel="noopener">Google Play</a>
+            <a href="https://store.steampowered.com/app/1372650/DAMN/" target="_blank" rel="noopener">Steam</a>
+            <a href="https://www.roblox.com/games/124374448373637/Carpet-Cleaning-Simulator" target="_blank" rel="noopener">Roblox</a>
+        </div>
+        <p>&copy; 2026 Curse Free Studios. All rights reserved.</p>
+    </footer>
+
 </body>
 </html>
