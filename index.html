@@ -221,6 +221,39 @@
         .btn-outline-blue { background: transparent; color: #66baff; border-color: #66baff; }
         .btn-outline-blue:hover { background: #66baff; color: #07111f; }
 
+        .roblox-stats {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+
+        .roblox-stat {
+            background: rgba(102, 186, 255, 0.08);
+            border: 1px solid rgba(102, 186, 255, 0.35);
+            border-radius: 10px;
+            padding: 12px;
+        }
+
+        .roblox-stat-label {
+            display: block;
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 0.78rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: #8ecfff;
+            margin-bottom: 6px;
+        }
+
+        .roblox-stat-value {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 900;
+            letter-spacing: 0.5px;
+            font-size: clamp(1.25rem, 2.4vw, 1.8rem);
+            color: #ffffff;
+            line-height: 1.1;
+        }
+
         .games-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -334,6 +367,7 @@
             .featured-game { grid-template-columns: 1fr; }
             .featured-game-img { min-height: 240px; }
             .featured-game-body { padding: 32px 24px; }
+            .roblox-stats { grid-template-columns: 1fr; }
             section { padding: 60px 20px; }
             .community-grid { grid-template-columns: 1fr; }
         }
@@ -399,6 +433,16 @@
                 <div class="game-tag">Roblox &bull; Simulator</div>
                 <h3>Carpet Cleaning<br>Simulator</h3>
                 <p>Our current Roblox focus: scrub, clean, and satisfy your way through endless dirty carpets. Surprisingly intense. Weirdly satisfying.</p>
+                <div class="roblox-stats" id="carpet-pro-stats" aria-live="polite">
+                    <div class="roblox-stat">
+                        <span class="roblox-stat-label">Total Visits</span>
+                        <div class="roblox-stat-value" id="carpet-visits">Loading...</div>
+                    </div>
+                    <div class="roblox-stat">
+                        <span class="roblox-stat-label">CCU</span>
+                        <div class="roblox-stat-value" id="carpet-ccu">Loading...</div>
+                    </div>
+                </div>
                 <div class="btn-group">
                     <a href="https://www.roblox.com/games/124374448373637/Carpet-Cleaning-Simulator" target="_blank" rel="noopener" class="btn btn-blue">Play on Roblox</a>
                     <a href="#community" class="btn btn-outline-blue">Join the Community</a>
@@ -474,6 +518,38 @@
         </div>
         <p>&copy; 2026 Curse Free Studios. All rights reserved.</p>
     </footer>
+
+    <script>
+        (async function loadCarpetStats() {
+            const placeId = "124374448373637";
+            const visitsEl = document.getElementById("carpet-visits");
+            const ccuEl = document.getElementById("carpet-ccu");
+            const formatNumber = new Intl.NumberFormat("en-US");
+
+            const showUnavailable = () => {
+                visitsEl.textContent = "Unavailable";
+                ccuEl.textContent = "Unavailable";
+            };
+
+            try {
+                const universeResponse = await fetch(`https://apis.roproxy.com/universes/v1/places/${placeId}/universe`);
+                if (!universeResponse.ok) throw new Error("Universe lookup failed");
+                const universeData = await universeResponse.json();
+                if (!universeData.universeId) throw new Error("Universe id missing");
+
+                const gameResponse = await fetch(`https://games.roproxy.com/v1/games?universeIds=${universeData.universeId}`);
+                if (!gameResponse.ok) throw new Error("Game stats lookup failed");
+                const gameData = await gameResponse.json();
+                const game = gameData && gameData.data && gameData.data[0];
+                if (!game) throw new Error("Game stats missing");
+
+                visitsEl.textContent = formatNumber.format(game.visits || 0);
+                ccuEl.textContent = formatNumber.format(game.playing || 0);
+            } catch (error) {
+                showUnavailable();
+            }
+        })();
+    </script>
 
 </body>
 </html>
