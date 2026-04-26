@@ -159,44 +159,53 @@
 
         /* ── HERO ── */
         .hero {
-            padding: 80px 48px 60px;
+            padding: 110px 48px 80px;
             text-align: center;
             position: relative;
             overflow: hidden;
         }
 
+        .hero::after {
+            content: '';
+            display: block;
+            width: 120px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--red), transparent);
+            margin: 48px auto 0;
+        }
+
         .hero-mark {
-            width: 80px;
-            height: 80px;
-            margin: 0 auto 24px;
+            width: 96px;
+            height: 96px;
+            margin: 0 auto 32px;
             background: var(--red);
             clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-            filter: drop-shadow(0 0 30px rgba(255, 46, 61, 0.6));
+            filter: drop-shadow(0 0 40px rgba(255, 46, 61, 0.7));
             animation: hex-pulse 3s ease-in-out infinite;
         }
 
         @keyframes hex-pulse {
-            0%, 100% { transform: scale(1);    filter: drop-shadow(0 0 30px rgba(255, 46, 61, 0.6)); }
-            50%       { transform: scale(1.05); filter: drop-shadow(0 0 50px rgba(255, 46, 61, 0.9)); }
+            0%, 100% { transform: scale(1);    filter: drop-shadow(0 0 40px rgba(255, 46, 61, 0.7)); }
+            50%       { transform: scale(1.05); filter: drop-shadow(0 0 64px rgba(255, 46, 61, 1)); }
         }
 
         .hero h1 {
             font-family: var(--font-display);
-            font-size: clamp(48px, 8vw, 120px);
+            font-size: clamp(56px, 9vw, 128px);
             line-height: 0.95;
             letter-spacing: -0.02em;
-            margin-bottom: 24px;
+            margin-bottom: 32px;
         }
 
         .hero h1 .red { color: var(--red); }
 
         .hero-sub {
             font-family: var(--font-body);
-            font-size: 14px;
+            font-size: 15px;
             color: var(--text-dim);
-            max-width: 520px;
+            max-width: 680px;
             margin: 0 auto;
-            line-height: 1.6;
+            line-height: 1.7;
         }
 
         .hero-sub strong { color: var(--text); font-weight: 700; }
