@@ -549,66 +549,145 @@
         .community-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 40px;
+            gap: 24px;
             align-items: start;
         }
 
-        .discord-widgets { display: flex; flex-direction: column; gap: 12px; }
-
-        .discord-widgets iframe {
-            width: 100%;
-            border: none;
-            border-radius: 4px;
-        }
-
-        .social-group-label {
+        .community-col h3 {
             font-family: var(--font-mono);
-            font-size: 10px;
-            font-weight: 700;
+            font-size: 11px;
+            color: var(--red);
             letter-spacing: 0.2em;
             text-transform: uppercase;
-            color: var(--red);
-            margin-bottom: 10px;
-            margin-top: 24px;
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--border);
         }
 
-        .social-group-label:first-child { margin-top: 0; }
-
-        .social-link {
+        .server-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            padding: 16px;
             display: flex;
             align-items: center;
-            gap: 14px;
+            gap: 16px;
+            margin-bottom: 12px;
+            text-decoration: none;
+            transition: border-color 0.2s, background 0.2s;
+        }
+
+        .server-card:hover { border-color: var(--border-strong); background: var(--bg-card-hover); }
+
+        .server-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 4px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-display);
+            font-size: 14px;
+            color: white;
+        }
+
+        .server-icon.damn { background: linear-gradient(135deg, #4a0e7a, #ff2e88); }
+        .server-icon.cfs  { background: linear-gradient(135deg, #ff6b35, #c61423); }
+
+        .server-info { flex: 1; min-width: 0; }
+
+        .server-name {
+            font-family: var(--font-display);
+            font-size: 16px;
+            color: var(--text);
+            margin-bottom: 6px;
+        }
+
+        .server-stats {
+            display: flex;
+            gap: 16px;
+            font-family: var(--font-mono);
+            font-size: 11px;
+            color: var(--text-dim);
+            letter-spacing: 0.05em;
+        }
+
+        .online-dot {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--green);
+            margin-right: 6px;
+            box-shadow: 0 0 8px var(--green);
+        }
+
+        .brand-subhead {
+            font-family: var(--font-mono);
+            font-size: 10px;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            margin: 24px 0 10px;
+            padding-bottom: 6px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .brand-subhead:first-of-type { margin-top: 0; }
+        .brand-subhead.cfs  { color: var(--text); }
+        .brand-subhead.damn { color: var(--red); }
+
+        .social-row {
+            display: flex;
+            align-items: center;
+            gap: 16px;
             padding: 14px 16px;
             background: var(--bg-card);
             border: 1px solid var(--border);
             border-radius: 4px;
-            text-decoration: none;
-            color: var(--text);
-            font-family: var(--font-display);
-            font-size: 13px;
-            letter-spacing: 0.05em;
-            transition: border-color 0.2s, color 0.2s;
             margin-bottom: 8px;
+            text-decoration: none;
+            transition: border-color 0.2s, background 0.2s;
         }
 
-        .social-link:hover { border-color: var(--red); color: var(--red-hot); }
+        .social-row:hover { border-color: var(--border-strong); background: var(--bg-card-hover); }
 
-        .social-link .platform {
+        .social-platform {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            min-width: 100px;
+        }
+
+        .social-row.cfs  .social-platform { color: var(--text); }
+        .social-row.damn .social-platform { color: var(--red-hot); }
+
+        .social-handle {
+            font-size: 13px;
+            color: var(--text-dim);
+            flex: 1;
+        }
+
+        .social-arrow {
             color: var(--text-faint);
             font-family: var(--font-mono);
-            font-size: 10px;
-            letter-spacing: 0.1em;
-            display: block;
-            margin-top: 2px;
+            transition: transform 0.2s, color 0.2s;
         }
 
+        .social-row.cfs:hover  .social-arrow { color: var(--text);     transform: translateX(4px); }
+        .social-row.damn:hover .social-arrow { color: var(--red-hot);  transform: translateX(4px); }
+
         /* ── ABOUT ── */
-        .about-text {
+        .about {
+            max-width: 720px;
             font-size: 14px;
             line-height: 1.8;
             color: var(--text-dim);
-            max-width: 640px;
         }
+
+        .about strong { color: var(--text); font-weight: 700; }
 
         /* ── FOOTER ── */
         footer {
@@ -820,37 +899,73 @@
                 <span class="section-eyebrow">// Join us</span>
                 <h2>COMMUNITY</h2>
             </div>
+            <div class="section-meta">2 SERVERS · 5 SOCIALS</div>
         </div>
         <div class="community-grid">
-            <div class="discord-widgets">
-                <iframe src="https://invidget.switchblade.xyz/damn?theme=dark" title="DAMN! Discord Server"></iframe>
-                <iframe src="https://invidget.switchblade.xyz/RHbqyR77gs?theme=dark" title="Curse Free Studios Discord Server"></iframe>
+
+            <!-- Discord server cards -->
+            <div class="community-col">
+                <h3>// Discord servers</h3>
+
+                <a href="https://discord.gg/RHbqyR77gs" target="_blank" rel="noopener" class="server-card">
+                    <div class="server-icon cfs">CFS</div>
+                    <div class="server-info">
+                        <div class="server-name">Curse Free Studios (RBLX)</div>
+                        <div class="server-stats">
+                            <span><span class="online-dot"></span><span id="cfs-online">—</span> online</span>
+                            <span style="color: var(--text-faint);"><span id="cfs-members">—</span> members</span>
+                        </div>
+                    </div>
+                    <span class="btn btn-secondary">Join</span>
+                </a>
+
+                <a href="https://discord.gg/damn" target="_blank" rel="noopener" class="server-card">
+                    <div class="server-icon damn">D!</div>
+                    <div class="server-info">
+                        <div class="server-name">DAMN!</div>
+                        <div class="server-stats">
+                            <span><span class="online-dot"></span><span id="damn-online">—</span> online</span>
+                            <span style="color: var(--text-faint);"><span id="damn-members">—</span> members</span>
+                        </div>
+                    </div>
+                    <span class="btn btn-primary">Join</span>
+                </a>
             </div>
-            <div>
-                <div class="social-group-label">DAMN!</div>
-                <a href="https://discord.gg/damn" target="_blank" rel="noopener" class="social-link">
-                    Discord<span class="platform">Join the DAMN! server</span>
+
+            <!-- Social links -->
+            <div class="community-col">
+                <h3>// Follow the chaos</h3>
+
+                <div class="brand-subhead cfs">Curse Free Studios</div>
+                <a href="https://www.youtube.com/@cursefreestudios" target="_blank" rel="noopener" class="social-row cfs">
+                    <span class="social-platform">YouTube</span>
+                    <span class="social-handle">@cursefreestudios</span>
+                    <span class="social-arrow">→</span>
                 </a>
-                <a href="https://www.youtube.com/@DAMNondatube" target="_blank" rel="noopener" class="social-link">
-                    YouTube<span class="platform">DAMN! on YouTube</span>
+
+                <div class="brand-subhead damn">DAMN! Franchise</div>
+                <a href="https://www.youtube.com/@DAMNondatube" target="_blank" rel="noopener" class="social-row damn">
+                    <span class="social-platform">YouTube</span>
+                    <span class="social-handle">DAMN! on YouTube</span>
+                    <span class="social-arrow">→</span>
                 </a>
-                <a href="https://x.com/DAMNondaX/" target="_blank" rel="noopener" class="social-link">
-                    X (Twitter)<span class="platform">@DAMNondaX</span>
+                <a href="https://x.com/DAMNondaX/" target="_blank" rel="noopener" class="social-row damn">
+                    <span class="social-platform">X / Twitter</span>
+                    <span class="social-handle">@DAMNondaX</span>
+                    <span class="social-arrow">→</span>
                 </a>
-                <a href="https://www.instagram.com/damnondagram" target="_blank" rel="noopener" class="social-link">
-                    Instagram<span class="platform">@damnondagram</span>
+                <a href="https://www.instagram.com/damnondagram" target="_blank" rel="noopener" class="social-row damn">
+                    <span class="social-platform">Instagram</span>
+                    <span class="social-handle">@damnondagram</span>
+                    <span class="social-arrow">→</span>
                 </a>
-                <a href="https://www.facebook.com/demonsatemyneighbors" target="_blank" rel="noopener" class="social-link">
-                    Facebook<span class="platform">Demons Ate My Neighbors</span>
-                </a>
-                <div class="social-group-label">CURSE FREE ROBLOX</div>
-                <a href="https://discord.gg/RHbqyR77gs" target="_blank" rel="noopener" class="social-link">
-                    Discord<span class="platform">Curse Free Studios Roblox server</span>
-                </a>
-                <a href="https://www.youtube.com/@cursefreestudios" target="_blank" rel="noopener" class="social-link">
-                    YouTube<span class="platform">@cursefreestudios</span>
+                <a href="https://www.facebook.com/demonsatemyneighbors" target="_blank" rel="noopener" class="social-row damn">
+                    <span class="social-platform">Facebook</span>
+                    <span class="social-handle">Demons Ate My Neighbors</span>
+                    <span class="social-arrow">→</span>
                 </a>
             </div>
+
         </div>
     </section>
 
@@ -862,7 +977,7 @@
                 <h2>CURSE FREE STUDIOS</h2>
             </div>
         </div>
-        <p class="about-text">We started with a promise: no curses. Then we named our game DAMN!, leaned hard into that franchise, and started building Roblox games right alongside it. Right now our Roblox spotlight is Carpet Cleaning Simulator while the DAMN! universe keeps growing on mobile and PC. The name is ironic. The games are real.</p>
+        <p class="about">We started with a promise: <strong>no curses</strong>. Then we named our game <strong>DAMN!</strong>, leaned hard into that franchise, and started building Roblox games right alongside it. Right now our Roblox spotlight is <strong>Carpet Cleaning Simulator</strong> while the DAMN! universe keeps growing on mobile and PC. The name is ironic. The games are real.</p>
     </section>
 
     <footer>
@@ -904,6 +1019,23 @@
 
         loadCCSStats();
         setInterval(loadCCSStats, 60_000);
+
+        async function loadDiscordStats() {
+            const servers = [
+                { invite: 'RHbqyR77gs', onlineId: 'cfs-online',  membersId: 'cfs-members'  },
+                { invite: 'damn',        onlineId: 'damn-online', membersId: 'damn-members' },
+            ];
+            for (const s of servers) {
+                try {
+                    const res = await fetch(`https://discord.com/api/v9/invites/${s.invite}?with_counts=true`);
+                    if (!res.ok) continue;
+                    const { approximate_presence_count: online, approximate_member_count: members } = await res.json();
+                    if (online   != null) document.getElementById(s.onlineId).textContent  = online.toLocaleString();
+                    if (members  != null) document.getElementById(s.membersId).textContent = members.toLocaleString();
+                } catch {}
+            }
+        }
+        loadDiscordStats();
     </script>
 
 </body>
