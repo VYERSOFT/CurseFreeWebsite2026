@@ -19,6 +19,8 @@ Live at: [cursefreestudios.com](https://cursefreestudios.com)
 | DAMN! | PC (Steam wishlist) | [Steam](https://store.steampowered.com/app/1372650/DAMN/) |
 | DARN! | Roblox | [Play](https://www.roblox.com/games/130082403089609/DARN) |
 | Carpet Cleaning Simulator | Roblox | [Play](https://www.roblox.com/games/124374448373637/Carpet-Cleaning-Simulator) |
+| Drain Simulator | Roblox | [Play](https://www.roblox.com/games/90235969904609/Drain-Simulator) |
+| Window Cleaning Simulator | Roblox | [Play](https://www.roblox.com/games/77239838599215/Window-Cleaning-Simulator) |
 | PIHH | Roblox | [Play](https://www.roblox.com/games/100823099379132/PIHH) |
 | Cloud Sniper | Roblox | [Play](https://www.roblox.com/games/137999109310745) |
 

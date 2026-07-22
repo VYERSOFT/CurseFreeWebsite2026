@@ -318,6 +318,62 @@
             max-width: 440px;
         }
 
+        .supporting-games {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 24px;
+            margin-top: 24px;
+        }
+
+        .supporting-card {
+            min-width: 0;
+        }
+
+        .supporting-card .card-art {
+            aspect-ratio: 16 / 9;
+        }
+
+        .supporting-card .card-body {
+            padding: 24px;
+            gap: 12px;
+        }
+
+        .supporting-card .card-body h4 {
+            font-size: clamp(24px, 3vw, 34px);
+        }
+
+        .supporting-card .card-body p {
+            font-size: 13px;
+            max-width: 58ch;
+        }
+
+        .supporting-stats {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 12px;
+            margin-top: 6px;
+            padding-top: 16px;
+            border-top: 1px solid var(--border);
+        }
+
+        .supporting-stat-num {
+            display: block;
+            font-family: var(--font-display);
+            font-size: 22px;
+            line-height: 1;
+            color: var(--text);
+        }
+
+        .supporting-stat-label {
+            display: block;
+            margin-top: 5px;
+            font-family: var(--font-mono);
+            font-size: 9px;
+            letter-spacing: 0.15em;
+            color: var(--text-faint);
+            text-transform: uppercase;
+        }
+
         /* ── TAGS ── */
         .tag-row {
             display: flex;
@@ -479,16 +535,6 @@
 
         .card-art.darn-bg     { background: linear-gradient(135deg, #1a4a0e, #4ade80); }
         .card-art.damn-pc-bg  { background: linear-gradient(135deg, #4a0e2a, #ff4488); }
-        .card-art.tbd-bg {
-            background: repeating-linear-gradient(45deg, #1a0a0d, #1a0a0d 10px, #0f0507 10px, #0f0507 20px);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: var(--font-display);
-            font-size: 56px;
-            color: var(--text-faint);
-        }
-
         /* teal grid overlay for DAMN! Nation */
         .card-art .grid-overlay {
             position: absolute;
@@ -735,6 +781,7 @@
             .featured-art { min-height: 260px; }
             .featured-body { padding: 32px 24px; }
             .featured-body h3 { font-size: 40px; }
+            .supporting-games { grid-template-columns: 1fr; }
             .grid { grid-template-columns: 1fr; }
             .community-grid { grid-template-columns: 1fr; }
         }
@@ -805,6 +852,66 @@
                 </div>
             </div>
         </div>
+
+        <div class="supporting-games" aria-label="More Roblox cleaning simulators">
+            <a href="https://www.roblox.com/games/90235969904609/Drain-Simulator" target="_blank" rel="noopener" class="card supporting-card">
+                <div class="card-art">
+                    <img src="./uploads/icon-drain.png" alt="Drain Simulator gameplay">
+                </div>
+                <div class="card-body">
+                    <div class="tag-row">
+                        <span class="tag roblox">ROBLOX</span>
+                        <span class="tag live"><span class="live-dot"></span>LIVE NOW</span>
+                        <span class="tag soon">PHYSICS SIM</span>
+                    </div>
+                    <h4>DRAIN SIMULATOR</h4>
+                    <p>Redirect real flowing water, clear clogged drains, and reclaim flooded streets with pumps, trenches, vacuums, and more.</p>
+                    <div class="supporting-stats">
+                        <div>
+                            <span class="supporting-stat-num" id="drain-visits">—</span>
+                            <span class="supporting-stat-label">Total visits</span>
+                        </div>
+                        <div>
+                            <span class="supporting-stat-num" id="drain-playing">—</span>
+                            <span class="supporting-stat-label"><span class="live-dot"></span>Playing now</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <span class="card-status">Free to play</span>
+                    <span class="card-cta">Play on Roblox</span>
+                </div>
+            </a>
+
+            <a href="https://www.roblox.com/games/77239838599215/Window-Cleaning-Simulator" target="_blank" rel="noopener" class="card supporting-card">
+                <div class="card-art">
+                    <img src="./uploads/icon-window-cleaning.png" alt="Window Cleaning Simulator gameplay">
+                </div>
+                <div class="card-body">
+                    <div class="tag-row">
+                        <span class="tag roblox">ROBLOX</span>
+                        <span class="tag live"><span class="live-dot"></span>LIVE NOW</span>
+                        <span class="tag soon">SIMULATOR</span>
+                    </div>
+                    <h4>WINDOW CLEANING SIMULATOR</h4>
+                    <p>Clean windows from shops to skyscrapers, upgrade your squeegees and sprays, and build a sparkling cleaning empire.</p>
+                    <div class="supporting-stats">
+                        <div>
+                            <span class="supporting-stat-num" id="window-visits">—</span>
+                            <span class="supporting-stat-label">Total visits</span>
+                        </div>
+                        <div>
+                            <span class="supporting-stat-num" id="window-playing">—</span>
+                            <span class="supporting-stat-label"><span class="live-dot"></span>Playing now</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <span class="card-status">Free to play</span>
+                    <span class="card-cta">Play on Roblox</span>
+                </div>
+            </a>
+        </div>
     </section>
 
     <!-- THE LINEUP -->
@@ -814,7 +921,7 @@
                 <span class="section-eyebrow">// All titles</span>
                 <h2>THE LINEUP</h2>
             </div>
-            <div class="section-meta">04 GAMES</div>
+            <div class="section-meta">03 GAMES</div>
         </div>
 
         <div class="grid">
@@ -875,22 +982,6 @@
                 <div class="card-footer">
                     <span class="card-status">Wishlist now</span>
                     <span class="card-cta">Steam</span>
-                </div>
-            </a>
-
-            <!-- TBD -->
-            <a href="#community" class="card">
-                <div class="card-art tbd-bg">?</div>
-                <div class="card-body">
-                    <div class="tag-row">
-                        <span class="tag soon">UP NEXT</span>
-                    </div>
-                    <h4>TO BE REVEALED</h4>
-                    <p>Something new is brewing in the Curse Free kitchen. Follow us to be the first to know.</p>
-                </div>
-                <div class="card-footer">
-                    <span class="card-status">Reveal: TBA</span>
-                    <span class="card-cta">Follow</span>
                 </div>
             </a>
 
@@ -998,21 +1089,32 @@
             return n.toLocaleString();
         }
 
-        async function loadCCSStats() {
+        function updateGameStats(prefix, game) {
+            if (!game) return;
+            const visits = document.getElementById(`${prefix}-visits`);
+            const playing = document.getElementById(`${prefix}-playing`);
+            if (visits) visits.textContent = fmt(game.visits);
+            if (playing) playing.textContent = fmt(game.playing);
+        }
+
+        async function loadRobloxStats() {
             try {
                 const res = await fetch('/api/roblox-stats');
                 if (!res.ok) throw new Error();
-                const { playing, visits } = await res.json();
-                const pf = fmt(playing);
-                const vf = fmt(visits);
-                document.getElementById('ccs-playing').textContent = pf;
-                document.getElementById('ccs-visits').textContent  = vf;
+                const data = await res.json();
+                const games = data.games || { carpet: data };
+                updateGameStats('ccs', games.carpet);
+                updateGameStats('drain', games.drain);
+                updateGameStats('window', games.window);
+
+                const pf = fmt(games.carpet.playing);
+                const vf = fmt(games.carpet.visits);
                 document.getElementById('flagship-meta').textContent = `${vf} VISITS · ${pf} LIVE`;
             } catch { /* leave dashes in place */ }
         }
 
-        loadCCSStats();
-        setInterval(loadCCSStats, 60_000);
+        loadRobloxStats();
+        setInterval(loadRobloxStats, 60_000);
 
         async function loadDiscordStats() {
             const servers = [
