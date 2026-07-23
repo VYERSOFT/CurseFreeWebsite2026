@@ -385,6 +385,10 @@
             border-top: 1px solid var(--border);
         }
 
+        .supporting-stats.visits-only {
+            grid-template-columns: 1fr;
+        }
+
         .supporting-stat-num {
             display: block;
             font-family: var(--font-display);
@@ -1162,7 +1166,15 @@
             const visits = document.getElementById(`${prefix}-visits`);
             const playing = document.getElementById(`${prefix}-playing`);
             if (visits) visits.textContent = fmt(game.visits);
-            if (playing) playing.textContent = fmt(game.playing);
+            if (playing) {
+                playing.textContent = fmt(game.playing);
+                const supportingStats = playing.closest('.supporting-stats');
+                if (supportingStats) {
+                    const hidePlaying = game.playing < 10;
+                    playing.parentElement.hidden = hidePlaying;
+                    supportingStats.classList.toggle('visits-only', hidePlaying);
+                }
+            }
         }
 
         async function loadRobloxStats() {
