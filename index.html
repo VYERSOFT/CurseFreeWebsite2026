@@ -320,7 +320,7 @@
 
         .supporting-games {
             display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
+            grid-template-columns: repeat(3, minmax(0, 1fr));
             gap: 24px;
         }
 
@@ -949,6 +949,35 @@
                     <span class="card-cta">Play on Roblox</span>
                 </div>
             </a>
+
+            <a href="https://www.roblox.com/games/17015612954/Fit-Check-Avatar-Catalog-Tycoon" target="_blank" rel="noopener" class="card supporting-card">
+                <div class="card-art">
+                    <img src="./uploads/icon-fit-check.jpg" alt="Fit Check! Avatar Catalog Tycoon gameplay">
+                </div>
+                <div class="card-body">
+                    <div class="tag-row">
+                        <span class="tag roblox">ROBLOX</span>
+                        <span class="tag live"><span class="live-dot"></span>LIVE NOW</span>
+                        <span class="tag soon">AVATAR TYCOON</span>
+                    </div>
+                    <h4>FIT CHECK!</h4>
+                    <p>Browse the avatar catalog, build your dream fit, grow your plot, and earn rewards while creating a style empire.</p>
+                    <div class="supporting-stats">
+                        <div>
+                            <span class="supporting-stat-num" id="fitcheck-visits">&mdash;</span>
+                            <span class="supporting-stat-label">Total visits</span>
+                        </div>
+                        <div>
+                            <span class="supporting-stat-num" id="fitcheck-playing">&mdash;</span>
+                            <span class="supporting-stat-label"><span class="live-dot"></span>Playing now</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <span class="card-status">Free to play</span>
+                    <span class="card-cta">Play on Roblox</span>
+                </div>
+            </a>
         </div>
     </section>
 
@@ -1144,6 +1173,7 @@
                 updateGameStats('ccs', games.carpet);
                 updateGameStats('drain', games.drain);
                 updateGameStats('window', games.window);
+                updateGameStats('fitcheck', games.fitcheck);
 
                 const pf = fmt(games.carpet.playing);
                 const vf = fmt(games.carpet.visits);

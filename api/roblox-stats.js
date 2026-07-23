@@ -2,6 +2,7 @@ const GAMES = {
   carpet: '9991421325',
   drain: '10403437074',
   window: '10143340324',
+  fitcheck: '5836185226',
 };
 
 module.exports = async function handler(req, res) {
