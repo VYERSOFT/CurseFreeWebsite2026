@@ -1164,9 +1164,13 @@
         }
 
         function updateGameStats(prefix, game) {
-            if (!game) return;
             const visits = document.getElementById(`${prefix}-visits`);
             const playing = document.getElementById(`${prefix}-playing`);
+            if (!game) {
+                if (visits) visits.textContent = 'N/A';
+                if (playing) playing.textContent = 'N/A';
+                return;
+            }
             if (visits) visits.textContent = fmt(game.visits);
             if (playing) {
                 playing.textContent = fmt(game.playing);
@@ -1190,9 +1194,13 @@
                 updateGameStats('window', games.window);
                 updateGameStats('fitcheck', games.fitcheck);
 
-                const pf = fmt(games.carpet.playing);
-                const vf = fmt(games.carpet.visits);
-                document.getElementById('flagship-meta').textContent = `${vf} VISITS · ${pf} LIVE`;
+                if (games.carpet) {
+                    const pf = fmt(games.carpet.playing);
+                    const vf = fmt(games.carpet.visits);
+                    document.getElementById('flagship-meta').textContent = `${vf} VISITS · ${pf} LIVE`;
+                } else {
+                    document.getElementById('flagship-meta').textContent = 'TEMP DOWN FOR REPAIRS';
+                }
             } catch { /* leave dashes in place */ }
         }
 
