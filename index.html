@@ -849,16 +849,17 @@
         body::before { opacity: 0.28; }
 
         nav {
-            min-height: 76px;
-            padding: 14px clamp(20px, 4vw, 64px);
+            min-height: 98px;
+            padding: 18px clamp(24px, 4vw, 64px);
             border-bottom: 1px solid rgba(255,255,255,0.07);
             background: rgba(8, 5, 6, 0.82);
             backdrop-filter: blur(20px) saturate(130%);
+            box-shadow: 0 12px 32px rgba(0,0,0,.2);
         }
 
-        .logo { gap: 13px; font-size: 12px; line-height: 1.05; letter-spacing: 0.08em; }
-        .logo-mark { height: 46px; filter: drop-shadow(0 0 18px rgba(255,46,61,.34)); }
-        .nav-links { gap: clamp(18px, 3vw, 42px); font-size: 10px; }
+        .logo { gap: 16px; font-size: 15px; line-height: 1.05; letter-spacing: 0.1em; }
+        .logo-mark { height: 62px; filter: drop-shadow(0 0 22px rgba(255,46,61,.42)); }
+        .nav-links { gap: clamp(20px, 3vw, 46px); font-size: 11px; letter-spacing: .17em; }
         .nav-links a { color: #cdbdc0; }
 
         .hero {
@@ -1160,9 +1161,9 @@
         }
 
         @media (max-width: 820px) {
-            nav { min-height: 66px; }
+            nav { min-height: 78px; padding-top: 14px; padding-bottom: 14px; }
             .logo span { display: none; }
-            .logo-mark { height: 38px; }
+            .logo-mark { height: 48px; }
             .nav-links li:nth-child(1), .nav-links li:nth-child(3) { display: none; }
             .hero {
                 min-height: auto;
