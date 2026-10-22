@@ -1273,7 +1273,10 @@
 
         .hero-kicker { color: var(--text-dim); }
         .hero-kicker > span { background: var(--red); box-shadow: none; }
-        .hero-visual { background: var(--bg-card); border-color: var(--border); }
+        /* Match the 16:9 key art so the game logo is never cropped */
+        .hero-visual { aspect-ratio: 16 / 9; min-height: 0; background: var(--bg-card); border-color: var(--border); }
+        .hero-visual img { object-position: center; }
+        .featured-art img { object-position: 60% center; }
         .hero-visual:hover { border-color: var(--red); }
         .hero-visual-topline > span:first-child { background: rgba(44, 0, 1, .82); border-color: var(--border); }
 
@@ -1379,7 +1382,7 @@
 
         <div class="featured">
             <div class="featured-art">
-                <img src="./uploads/icon-carpet.png" alt="Carpet Cleaning Simulator">
+                <img src="./uploads/ccs-scrubbys.png" alt="A Roblox character cleaning a red carpet in Carpet Cleaning Simulator">
                 <div class="featured-art-overlay"></div>
             </div>
             <div class="featured-body">
