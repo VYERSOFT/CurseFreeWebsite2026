@@ -23,7 +23,7 @@ Live at: [cursefreestudios.com](https://cursefreestudios.com)
 | Window Cleaning Simulator | Roblox | [Play](https://www.roblox.com/games/77239838599215/Window-Cleaning-Simulator) |
 | Fit Check! Avatar Catalog Tycoon | Roblox | [Play](https://www.roblox.com/games/17015612954/Fit-Check-Avatar-Catalog-Tycoon) |
 | Chop Tycoon: Titan Attack | Roblox | [Play](https://www.roblox.com/games/139157826076327/Chop-Tycoon-Titan-Attack) |
-| Stitch & Style Atelier | Roblox | [Play](https://www.roblox.com/games/120459240368281/Stitch-Style-Atelier) |
+| Dress Maker Tycoon | Roblox | [Play](https://www.roblox.com/games/120459240368281/Dress-Maker-Tycoon) |
 | PIHH | Roblox | [Play](https://www.roblox.com/games/100823099379132/PIHH) |
 | Cloud Sniper | Roblox | [Play](https://www.roblox.com/games/137999109310745) |
 

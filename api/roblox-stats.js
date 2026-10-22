@@ -4,7 +4,7 @@ const GAMES = {
   window: '10143340324',
   fitcheck: '5836185226',
   titan: '10768426931',
-  stitch: '10768378034',
+  dressmaker: '10768378034',
   barber: '10771607144',
 };
 
