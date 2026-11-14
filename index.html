@@ -1321,6 +1321,148 @@
             .logo-word { display: none; }
         }
 
+        /* ── TRENDING / CCU-BASED FEATURING ── */
+        .card.trending {
+            border-color: rgba(255, 80, 80, 0.6);
+            box-shadow: 0 0 0 1px rgba(255, 80, 80, 0.15), 0 20px 60px rgba(255, 50, 50, 0.12);
+            order: -1;
+        }
+
+        .card.trending::before {
+            content: '';
+            position: absolute;
+            inset: -1px;
+            border-radius: inherit;
+            background: linear-gradient(135deg, rgba(255, 80, 80, 0.3), transparent 50%, rgba(255, 80, 80, 0.15));
+            z-index: 0;
+            pointer-events: none;
+            opacity: 0;
+            animation: trending-glow 2.5s ease-in-out infinite;
+        }
+
+        @keyframes trending-glow {
+            0%, 100% { opacity: 0.4; }
+            50% { opacity: 0.8; }
+        }
+
+        .trending-badge {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            z-index: 3;
+            font-family: var(--font-mono);
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            background: linear-gradient(135deg, #FF5050, #FF8C42);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 999px;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            box-shadow: 0 4px 16px rgba(255, 80, 80, 0.4);
+        }
+
+        .trending-badge .fire { font-size: 11px; }
+
+        /* ── ENTRANCE ANIMATIONS ── */
+        .card, .featured, .server-card, .social-row {
+            opacity: 0;
+            transform: translateY(28px);
+            animation: fade-up 0.6s ease forwards;
+        }
+
+        .featured { animation-delay: 0.1s; }
+        .supporting-games .card:nth-child(1) { animation-delay: 0.1s; }
+        .supporting-games .card:nth-child(2) { animation-delay: 0.2s; }
+        .supporting-games .card:nth-child(3) { animation-delay: 0.3s; }
+        .supporting-games .card:nth-child(4) { animation-delay: 0.4s; }
+        .supporting-games .card:nth-child(5) { animation-delay: 0.5s; }
+        .supporting-games .card:nth-child(6) { animation-delay: 0.6s; }
+        #lineup .grid .card:nth-child(1) { animation-delay: 0.1s; }
+        #lineup .grid .card:nth-child(2) { animation-delay: 0.2s; }
+        #lineup .grid .card:nth-child(3) { animation-delay: 0.3s; }
+        .server-card:nth-child(2) { animation-delay: 0.1s; }
+        .server-card:nth-child(3) { animation-delay: 0.2s; }
+        .social-row:nth-child(n) { animation-delay: 0.15s; }
+
+        @keyframes fade-up {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ── IMPROVED CARD HOVER ── */
+        .card:hover {
+            transform: translateY(-8px) scale(1.01);
+            box-shadow: 0 32px 80px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 80, 80, 0.2);
+        }
+
+        .card:hover .card-art img {
+            transform: scale(1.06);
+            transition: transform 0.6s ease;
+        }
+
+        .card .card-art img {
+            transition: transform 0.6s ease;
+        }
+
+        /* ── SECTION DIVIDERS ── */
+        .section-head::after {
+            content: '';
+            display: block;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, var(--red), transparent 80%);
+        }
+
+        .section-head {
+            position: relative;
+            padding-bottom: 20px;
+        }
+
+        /* ── BETTER STATS STYLING ── */
+        .supporting-stat-num {
+            background: linear-gradient(135deg, var(--text), var(--text-dim));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .card.trending .supporting-stat-num {
+            background: linear-gradient(135deg, #FF5050, #FF8C42);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* ── PLAYING NOW PULSE ── */
+        .playing-highlight {
+            color: var(--red-hot) !important;
+            -webkit-text-fill-color: var(--red-hot) !important;
+        }
+
+        /* ── HERO PROOF COUNTERS ── */
+        .hero-proof strong {
+            background: linear-gradient(135deg, var(--text), var(--red-hot));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* ── SMOOTH REORDER ── */
+        .supporting-games {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+
+        .supporting-games .card {
+            transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease, box-shadow 0.3s ease, order 0s;
+        }
+
         @media (prefers-reduced-motion: reduce) {
             html { scroll-behavior: auto; }
             *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
@@ -1363,6 +1505,7 @@
             <img src="./uploads/icon-carpet.png" alt="Carpet Cleaning Simulator">
             <div class="hero-visual-topline">
                 <span>STUDIO SPOTLIGHT</span>
+                <span id="hero-live-count" style="padding: 9px 12px; border-radius: 999px; background: rgba(8,5,6,.78); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,.14); display: none;"><span class="live-dot"></span> <span id="hero-live-num">0</span> PLAYING NOW</span>
             </div>
             <span class="hero-scroll">SCROLL TO EXPLORE <b>↓</b></span>
         </a>
@@ -1422,11 +1565,11 @@
                 <span class="section-eyebrow">Studio collaborations</span>
                 <h3>ROBLOX GAMES</h3>
             </div>
-            <p class="supporting-games-note">Independent Roblox experiences we support with development, operations, and studio expertise.</p>
+            <p class="supporting-games-note">Independent Roblox experiences we support with development, operations, and studio expertise. Sorted by live players.</p>
         </div>
 
         <div class="supporting-games" aria-label="Roblox games supported by Curse Free Studios">
-            <a href="https://www.roblox.com/games/90235969904609/Drain-Simulator" target="_blank" rel="noopener" class="card supporting-card">
+            <a href="https://www.roblox.com/games/90235969904609/Drain-Simulator" target="_blank" rel="noopener" class="card supporting-card" data-game="drain">
                 <div class="card-art">
                     <img src="./uploads/icon-drain.png" alt="Drain Simulator gameplay">
                 </div>
@@ -1455,7 +1598,7 @@
                 </div>
             </a>
 
-            <a href="https://www.roblox.com/games/77239838599215/Window-Cleaning-Simulator" target="_blank" rel="noopener" class="card supporting-card">
+            <a href="https://www.roblox.com/games/77239838599215/Window-Cleaning-Simulator" target="_blank" rel="noopener" class="card supporting-card" data-game="window">
                 <div class="card-art">
                     <img src="./uploads/icon-window-cleaning.png" alt="Window Cleaning Simulator gameplay">
                 </div>
@@ -1484,7 +1627,7 @@
                 </div>
             </a>
 
-            <a href="https://www.roblox.com/games/17015612954/Fit-Check-Avatar-Catalog-Tycoon" target="_blank" rel="noopener" class="card supporting-card">
+            <a href="https://www.roblox.com/games/17015612954/Fit-Check-Avatar-Catalog-Tycoon" target="_blank" rel="noopener" class="card supporting-card" data-game="fitcheck">
                 <div class="card-art">
                     <img src="./uploads/icon-fit-check.jpg" alt="Fit Check! Avatar Catalog Tycoon gameplay">
                 </div>
@@ -1514,7 +1657,7 @@
                 </div>
             </a>
 
-            <a href="https://www.roblox.com/games/139157826076327/Chop-Tycoon-Titan-Attack" target="_blank" rel="noopener" class="card supporting-card">
+            <a href="https://www.roblox.com/games/139157826076327/Chop-Tycoon-Titan-Attack" target="_blank" rel="noopener" class="card supporting-card" data-game="titan">
                 <div class="card-art">
                     <img src="./uploads/icon-titan.png" alt="CHOP TYCOON: TITAN ATTACK" loading="lazy">
                 </div>
@@ -1542,7 +1685,7 @@
                 </div>
             </a>
 
-            <a href="https://www.roblox.com/games/120459240368281/Dress-Maker-Tycoon" target="_blank" rel="noopener" class="card supporting-card">
+            <a href="https://www.roblox.com/games/120459240368281/Dress-Maker-Tycoon" target="_blank" rel="noopener" class="card supporting-card" data-game="dressmaker">
                 <div class="card-art">
                     <img src="./uploads/icon-dressmaker.png" alt="Dress Maker Tycoon gameplay" loading="lazy">
                 </div>
@@ -1570,7 +1713,7 @@
                 </div>
             </a>
 
-            <a href="https://www.roblox.com/games/102534103997064/Barber-Tycoon" target="_blank" rel="noopener" class="card supporting-card">
+            <a href="https://www.roblox.com/games/102534103997064/Barber-Tycoon" target="_blank" rel="noopener" class="card supporting-card" data-game="barber">
                 <div class="card-art">
                     <img src="./uploads/icon-barber.png" alt="Barber Tycoon gameplay" loading="lazy">
                 </div>
@@ -1769,6 +1912,13 @@
         <img src="./uploads/brand/cfs-devil-dark.svg" alt="Curse Free Studios" class="footer-mark">
         <div class="footer-tagline">Games worth swearing by.</div>
         CURSE FREE STUDIOS &middot; MADE IN TEXAS
+        <div class="footer-links">
+            <a href="#flagship">Spotlight</a>
+            <a href="#collaborations">Roblox</a>
+            <a href="#lineup">Our Games</a>
+            <a href="#community">Community</a>
+            <a href="/privacy/">Privacy</a>
+        </div>
         <div style="margin-top: 12px;">&copy; 2026 Curse Free Studios. All rights reserved.</div>
     </footer>
 
@@ -1790,6 +1940,7 @@
             if (visits) visits.textContent = fmt(game.visits);
             if (playing) {
                 playing.textContent = fmt(game.playing);
+                if (game.playing > 0) playing.classList.add('playing-highlight');
                 const supportingStats = playing.closest('.supporting-stats');
                 if (supportingStats) {
                     const hidePlaying = game.playing < 10;
@@ -1797,6 +1948,49 @@
                     supportingStats.classList.toggle('visits-only', hidePlaying);
                 }
             }
+        }
+
+        // Reorder the Roblox games grid so highest-CCU games appear first
+        function reorderByCCU(games) {
+            const grid = document.querySelector('#collaborations .supporting-games');
+            if (!grid) return;
+            const cards = [...grid.querySelectorAll('.supporting-card')];
+
+            // Map each card to its CCU via data-game attribute
+            const ccuMap = new Map();
+            cards.forEach(card => {
+                const key = card.dataset.game;
+                const game = games[key];
+                const ccu = game && Number.isFinite(game.playing) ? game.playing : 0;
+                ccuMap.set(card, ccu);
+            });
+
+            // Sort descending by CCU
+            cards.sort((a, b) => ccuMap.get(b) - ccuMap.get(a));
+
+            // Clear existing trending states
+            cards.forEach(card => {
+                card.classList.remove('trending');
+                const existingBadge = card.querySelector('.trending-badge');
+                if (existingBadge) existingBadge.remove();
+            });
+
+            // Mark top CCU games as trending (any with CCU > 0, up to 2)
+            let trendingCount = 0;
+            cards.forEach(card => {
+                const ccu = ccuMap.get(card);
+                if (ccu > 50 && trendingCount < 2) {
+                    card.classList.add('trending');
+                    const badge = document.createElement('div');
+                    badge.className = 'trending-badge';
+                    badge.innerHTML = '<span class="fire">🔥</span> TRENDING';
+                    card.querySelector('.card-art').appendChild(badge);
+                    trendingCount++;
+                }
+            });
+
+            // Reorder in the DOM
+            cards.forEach(card => grid.appendChild(card));
         }
 
         async function loadRobloxStats() {
@@ -1812,6 +2006,36 @@
                 updateGameStats('titan', games.titan);
                 updateGameStats('dressmaker', games.dressmaker);
                 updateGameStats('barber', games.barber);
+
+                // Reorder Roblox games by CCU
+                reorderByCCU(games);
+
+                // Update hero visual to show the game with highest CCU across all Roblox games
+                const allGames = [
+                    { key: 'carpet', ...games.carpet },
+                    { key: 'drain', ...games.drain },
+                    { key: 'window', ...games.window },
+                    { key: 'fitcheck', ...games.fitcheck },
+                    { key: 'titan', ...games.titan },
+                    { key: 'dressmaker', ...games.dressmaker },
+                    { key: 'barber', ...games.barber },
+                ].filter(g => g.playing != null && Number.isFinite(g.playing));
+
+                // Update hero proof with live total CCU
+                const totalCCU = allGames.reduce((sum, g) => sum + (g.playing || 0), 0);
+                const totalVisits = allGames.reduce((sum, g) => sum + (g.visits || 0), 0);
+                const proofSpans = document.querySelectorAll('.hero-proof span');
+                if (proofSpans[1] && totalVisits > 0) {
+                    proofSpans[1].innerHTML = `<strong>${fmt(totalVisits)}</strong> combined visits`;
+                }
+
+                // Show total live players in hero
+                const heroLiveCount = document.getElementById('hero-live-count');
+                const heroLiveNum = document.getElementById('hero-live-num');
+                if (heroLiveCount && heroLiveNum && totalCCU > 0) {
+                    heroLiveNum.textContent = fmt(totalCCU);
+                    heroLiveCount.style.display = '';
+                }
 
                 // Statistics are optional: keep the verified Play link available
                 // even when Roblox returns partial data or the request fails.
