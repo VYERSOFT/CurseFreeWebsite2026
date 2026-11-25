@@ -1,0 +1,15 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "redirects": [
+    {
+      "source": "/damn/privacy",
+      "destination": "https://www.cursefreestudios.com/privacy/",
+      "permanent": true
+    },
+    {
+      "source": "/damn/privacy/",
+      "destination": "https://www.cursefreestudios.com/privacy/",
+      "permanent": true
+    }
+  ]
+}
