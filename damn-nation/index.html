@@ -432,15 +432,8 @@
             flex-wrap: wrap;
         }
 
-        .platform-badge {
-            padding: 18px 30px;
-            border-radius: 50px;
-            border: 3px dashed #ff3399;
-            color: #ff9cc9;
-            font-size: 1.3rem;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            background: rgba(255, 51, 153, 0.12);
+        #play-now {
+            scroll-margin-top: 125px;
         }
 
         .platform-button {
@@ -1758,7 +1751,7 @@
             <div class="sticky-actions">
                 <a href="#features" class="sticky-link" onclick="scrollToSection('features'); return false;">Features</a>
                 <a href="#bosses" class="sticky-link" onclick="scrollToSection('bosses'); return false;">Bosses</a>
-                <a href="https://play.google.com/store/apps/details?id=com.cursefreestudios.damnnation" target="_blank" rel="noopener" class="sticky-link primary">Play Now</a>
+                <a href="#play-now" class="sticky-link primary">Play Now</a>
             </div>
         </div>
     </nav>
@@ -1839,10 +1832,10 @@
             <div class="subtitle">
                 Suit up as <strong>April</strong>, blast possessed neighbors, and stack crazy item synergies in this chaotic, replayable mobile roguelite.
             </div>
-            <div class="play-now-subtitle">Play Now</div>
+            <div class="play-now-subtitle" id="play-now">Play Now</div>
             <div class="platform-buttons">
-                <a href="https://play.google.com/store/apps/details?id=com.cursefreestudios.damnnation" target="_blank" rel="noopener" class="platform-button android-button">Android</a>
-                <span class="platform-badge">Coming Soon to iOS</span>
+                <a href="https://play.google.com/store/apps/details?id=com.cursefreestudios.damnnation" target="_blank" rel="noopener" class="platform-button android-button">Google Play</a>
+                <a href="https://apps.apple.com/us/app/damn-nation/id6695727121" target="_blank" rel="noopener" class="platform-button app-store-button">App Store</a>
                 <a href="#" onclick="openVideo(); return false;" class="platform-button ios-button">Watch Trailer</a>
             </div>
         </div>
